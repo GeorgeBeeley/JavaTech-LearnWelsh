@@ -19,20 +19,25 @@ public final class QuestionGenerator {
      * @param t the translation object for word being tested
      * @return 
      */
-    public static String newQuestion(Translation t){
+    public static Question newQuestion(Translation t){
         int r = RAND.nextInt(3);
         String question = QUESTIONS[r];
+        String answer = null;
         switch(r){
             case 0:
                 question = question + t.WELSH;
+                answer = t.GENDER.toString();
                 break;
             case 1:
                 question = question + t.WELSH;
+                answer = t.ENG;
                 break;
             case 2:
                 question = question + t.ENG;
+                answer = t.WELSH;
                 break;
         }
-        return question;
+        Question q = new Question(question,answer);
+        return q;
     }
 }
