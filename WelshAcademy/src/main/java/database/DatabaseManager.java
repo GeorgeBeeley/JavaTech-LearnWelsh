@@ -13,7 +13,7 @@ import java.util.LinkedList;
 
 /**
  * manages database requests
- * @version 0.53
+ * @version 1
  * @author Jack
  */
 public class DatabaseManager {
@@ -340,7 +340,13 @@ public class DatabaseManager {
         }
         return result;
     }
-    
+    /**
+     * gets a 2d array representation of result of search
+     * @param table
+     * @param searchTerms field name followed by value alternating for search
+     * @return
+     * @throws SQLException 
+     */
     public String[][] search(String table,String[] searchTerms) throws SQLException{
         String[][] result;
         if(searchTerms.length % 2 != 0)
@@ -414,7 +420,13 @@ public class DatabaseManager {
             return null; //empty result set
         }
     }
-    
+    /**
+     * gets a row from the database matching search
+     * @param table to get row from
+     * @param searchTerms field name followed by field value alternating
+     * @return array of the row
+     * @throws SQLException 
+     */
     public String[] getRow(String table,String[] searchTerms) throws SQLException{
         String[] row = null;
         
@@ -453,6 +465,25 @@ public class DatabaseManager {
         
         }
         return row;
+    }
+    /**
+     * gets the size of a table
+     * @param table
+     * @return number of rows counted
+     */
+    public int count(String table) throws SQLException{
+        int count = 0;
+        
+        String cmd = "SELECT COUNT(*) FROM " + table;
+        
+        Statement st = conn.createStatement();
+        ResultSet rs = st.executeQuery(cmd);
+        
+        //read the single cell with count
+        rs.next();
+        count = rs.getInt(0);
+        
+        return count;
     }
     
 //    /**

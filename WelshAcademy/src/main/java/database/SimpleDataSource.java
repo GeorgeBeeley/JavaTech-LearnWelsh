@@ -3,7 +3,6 @@ package database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -18,9 +17,11 @@ public class SimpleDataSource
    private static String password;
 
    /**
-      Initializes the data source.
+      Initialises the data source.
       @param file input stream of property file that 
       contains the database driver, URL, username, and password
+     * @throws java.io.IOException
+     * @throws java.lang.ClassNotFoundException
    */
    public static void init(InputStream file)
          throws IOException, ClassNotFoundException

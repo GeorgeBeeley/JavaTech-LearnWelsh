@@ -22,6 +22,10 @@ public class SaltAndHash {
     private static class SaltAndHashHolder {
         private static final SaltAndHash INSTANCE = new SaltAndHash();
     }
+    /**
+     * creates a random string to salt a password with
+     * @return random salt
+     */
     public static String generateSalt(){
         Random r = new Random();
         byte[] bytes = new byte[16];
@@ -31,6 +35,7 @@ public class SaltAndHash {
     }
     
     /**
+     * adds a salt to password the secure hashes it
      * @param password
      * @param salt
      * @return a salted and hash secure password

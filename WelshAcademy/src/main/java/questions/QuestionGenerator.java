@@ -14,6 +14,11 @@ public final class QuestionGenerator {
         "What is the Welsh noun for the English word "};
     private static final Random RAND = new Random();
     
+    /**
+     * randomly generate a question from a translations
+     * @param t the translation object for word being tested
+     * @return 
+     */
     public static String newQuestion(Translation t){
         int r = RAND.nextInt(3);
         String question = QUESTIONS[r];
