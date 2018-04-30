@@ -470,18 +470,20 @@ public class DatabaseManager {
      * gets the size of a table
      * @param table
      * @return number of rows counted
+     * @throws java.sql.SQLException
      */
     public int count(String table) throws SQLException{
         int count = 0;
         
         String cmd = "SELECT COUNT(*) FROM " + table;
         
-        Statement st = conn.createStatement();
-        ResultSet rs = st.executeQuery(cmd);
-        
-        //read the single cell with count
-        rs.next();
-        count = rs.getInt(0);
+        try (Statement st = conn.createStatement()) {
+            ResultSet rs = st.executeQuery(cmd);
+            
+            //read the single cell with count
+            rs.next();
+            count = rs.getInt(1);
+        }
         
         return count;
     }
