@@ -52,6 +52,7 @@ fabric.properties
 # Editor-based Rest Client
 .idea/httpRequests
 
+WelshAcademy/target/
 nbproject/private/
 build/
 nbbuild/
