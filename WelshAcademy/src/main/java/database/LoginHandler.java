@@ -19,18 +19,18 @@ public class LoginHandler {
     }
     /**
      * check for user that exists and if the password is correct
-     * @param username
+     * @param email
      * @param password
      * @return if username and password are valid 
      */
-    public Login login(String username,String password){
+    public Login login(String email,String password){
         
         Login login = Login.FAILED;
         
         try {
             
             //check user exists
-            String[] existingUsers = dm.getColumn("Users", "username");
+            String[] existingUsers = dm.getColumn("Users", "email");
 //            System.out.println(existingUsers.length);
             if(existingUsers.length == 0){
                 login = Login.FAILED;
@@ -38,7 +38,7 @@ public class LoginHandler {
             }
             boolean exists = false;
             for(String user: existingUsers){
-                if(user.equals(username)){
+                if(user.equals(email)){
                     exists = true;
                     break;
                 }
@@ -52,9 +52,9 @@ public class LoginHandler {
             
             
             //get required info
-            String salt = dm.getElement("Users", "salt", "username", username);
+            String salt = dm.getElement("Users", "salt", "email", email);
             String saltedPass = SaltAndHash.saltAndHash(password, salt);
-            String expectedPass = dm.getElement("Users", "saltedPassword", "username", username);
+            String expectedPass = dm.getElement("Users", "saltedPassword", "email", email);
             
             //check password
             boolean validUser = saltedPass.equals(expectedPass);
@@ -77,13 +77,12 @@ public class LoginHandler {
     }
     /**
      * register a new user
-     * @param username
      * @param password
      * @param forname
      * @param email
      * @return successful or type of error 
      */
-    public Register registerUser(String username,String password,String forname,String email){
+    public Register registerUser(String email,String password,String forname,String surname){
         
         Register reg = Register.FAILED;
         
@@ -91,17 +90,16 @@ public class LoginHandler {
         try{
             String salt = SaltAndHash.generateSalt();
             String securePass = SaltAndHash.saltAndHash(password, salt);
-            String[] inputData = {username,securePass,salt,forname,null,email,"A2"};
+            String[] inputData = {"0",securePass,salt,forname,surname,email,"Student"};
             //check if already user exists
-            String[] existingUsers = dm.getColumn("Users", "username");
-//            System.out.println(existingUsers.length);
-            if(existingUsers.length == 0){
+            String[] existingUsers = dm.getColumn("Users", "email");
+            if(existingUsers.length == 0){ //problem accessing database or table is empty due to some error
                 reg = Register.FAILED;
                 return reg;
             }
             boolean exists = false;
-            for(String user: existingUsers){
-                if(user.equals(username)){
+            for(String userEmail: existingUsers){
+                if(userEmail.equals(email)){
                     exists = true;
                     break;
                 }
@@ -134,7 +132,7 @@ public class LoginHandler {
      * @param permisions
      * @return successful or type of error 
      */
-    public Register registerUser(String username,String password,String forname,String surname,String email,String permisions){
+    public Register registerUser(String password,String forname,String surname,String email,String permisions){
         
         Register reg = Register.FAILED;
         
@@ -142,17 +140,17 @@ public class LoginHandler {
         try{
             String salt = SaltAndHash.generateSalt();
             String securePass = SaltAndHash.saltAndHash(password, salt);
-            String[] inputData = {username,securePass,salt,forname,surname,email,permisions};
+            String[] inputData = {"0",securePass,salt,forname,surname,email,permisions};
             //check if already user exists
-            String[] existingUsers = dm.getColumn("Users", "username");
+            String[] existingUsers = dm.getColumn("Users", "email");
 //            System.out.println(existingUsers.length);
-            if(existingUsers.length == 0){
+            if(existingUsers.length == 0){ //error either table empty or unable to access
                 reg = Register.FAILED;
                 return reg;
             }
             boolean exists = false;
             for(String user: existingUsers){
-                if(user.equals(username)){
+                if(user.equals(email)){
                     exists = true;
                     break;
                 }
