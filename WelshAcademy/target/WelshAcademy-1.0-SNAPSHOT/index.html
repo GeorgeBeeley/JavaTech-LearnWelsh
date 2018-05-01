@@ -10,18 +10,71 @@
 
         <title>Welsh Academy - Welcome</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            .column {
+                max-width: 350px;
+            }
+            .register {
+                display: none;
+            }
+            body > .grid {
+                height: 100%;
+            }
+            .logo{
+                margin: 1rem 0;
+                padding: 1em 1em;
+            }
+        </style>
+        <script type="text/javascript">
+            function toggleRegister() {
+                var e = document.getElementById('registration');
+                var d = document.getElementById('login');
+                e.style.display = 'block';
+                d.style.display = 'none';
+            }
+            function toggleLogin() {
+                var e = document.getElementById('registration');
+                var d = document.getElementById('login');
+                e.style.display = 'none';
+                d.style.display = 'block';
+            }
+        </script>
     </head>
-
     <body>
 
         <div class="ui middle aligned center aligned grid">
             <div class="column">
-                <h1 class="ui header">
-                    <div class="content">Welsh Academy</div>
-                </h1>
+                <div class="ui ">
+                    <img class="ui image logo" src="Resources/LOGO.png" alt="Welsh Academy">
+                </div>
+                <form class="ui form" id="login">
+                    <div class="field">
+                        <input type="text" placeholder="username"/>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="password"/>
+                    </div>
+                    <p>Not registered? <a href="#" onclick="toggleRegister(); ">Create an account</a></p>
+                    <button class="ui green button">login</button>
+                </form>
+                <form class="ui form register" id="registration">
+                    <div class="field">
+                        <input type="text" placeholder="first name"/>
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="last name"/>
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="email address"/>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="password"/>
+                    </div>
+                    <p>Already registered? <a href="#" onclick="toggleLogin('login')">Sign In</a></p>
+                    <button class="ui green button">create</button>
+                </form>
             </div>
         </div>
-
     </body>
 
 </html>
