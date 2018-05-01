@@ -51,3 +51,10 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
