@@ -27,6 +27,9 @@ and open the template in the editor.
             .right{
                 float: right;
             }
+            .rmargin{
+                margin-right: 10px;
+            }
         </style>
     </head>
     <body>
@@ -43,7 +46,7 @@ and open the template in the editor.
                             Add Words
                         </a>
                         <a class="item">
-                            Append Words
+                            Update Words
                         </a>
                         <a class="item">
                             Tests
@@ -55,27 +58,37 @@ and open the template in the editor.
                 </div>
             </div>
         </div>
-        <div class="ui middle aligned center aligned grid">
-            <div class="ui form">
-                <div class="fields">
-                    <div class="field">
-                        <label>English Word</label>
-                        <input type="text" placeholder="Enter Word">
+        <div class="ui middle aligned center aligned grid" style="  margin-top: 100px;">
+            <form>
+                <div class="ui form">
+                    <div class="fields">
+                        <div class="field">
+                            <label>English Word</label>
+                            <input type="text" placeholder="Enter Word">
+                        </div>
+                        <div class="field">
+                            <label>Welsh Word</label>
+                            <input type="text" placeholder="Enter Word">
+                        </div>
+                        <div class="field">
+                            <label>Gender Classification</label>
+                            <select class="ui fluid search dropdown" name="Gender">
+                                <option value="">Gender</option>
+                                <option value="M">Masculine</option>
+                                <option value="F">Feminine</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="field">
-                        <label>Welsh Word</label>
-                        <input type="text" placeholder="Enter Word">
-                    </div>
-                    <div class="field">
-                        <label>Gender Classification</label>
-                        <select class="ui fluid search dropdown" name="Gender">
-                            <option value="">Gender</option>
-                            <option value="M">Masculine</option>
-                            <option value="F">Feminine</option>
-                        </select>
+                        <div class="ui button float right" tabindex="0">Submit Word</div>
                     </div>
                 </div>
+            </form>
+        </div> 
+        <footer>
+            <div class="right rmargin">
+                <h3>logout</h3>
             </div>
-        </div>    
+        </footer>
     </body>
 </html>
