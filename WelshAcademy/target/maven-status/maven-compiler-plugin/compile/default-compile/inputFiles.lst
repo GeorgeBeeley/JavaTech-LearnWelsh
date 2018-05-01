@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Lawrence\Documents\University Work\JavaTech-LearnWelsh\WelshAcademy\src\main\java\questions\QuestionGenerator.java
 C:\Users\Lawrence\Documents\University Work\JavaTech-LearnWelsh\WelshAcademy\src\main\java\questions\Gender.java
 C:\Users\Lawrence\Documents\University Work\JavaTech-LearnWelsh\WelshAcademy\src\main\java\database\Register.java
@@ -9,3 +10,16 @@ C:\Users\Lawrence\Documents\University Work\JavaTech-LearnWelsh\WelshAcademy\src
 C:\Users\Lawrence\Documents\University Work\JavaTech-LearnWelsh\WelshAcademy\src\main\java\database\AddAdminUser.java
 C:\Users\Lawrence\Documents\University Work\JavaTech-LearnWelsh\WelshAcademy\src\main\java\questions\Translation.java
 C:\Users\Lawrence\Documents\University Work\JavaTech-LearnWelsh\WelshAcademy\src\main\java\database\DatabaseManager.java
+=======
+C:\Users\George\Documents\Uni\Year 2\Semester 2\ICP 2152 - Java Technologies\JavaTech-LearnWelsh\WelshAcademy\src\main\java\database\DatabaseManager.java
+C:\Users\George\Documents\Uni\Year 2\Semester 2\ICP 2152 - Java Technologies\JavaTech-LearnWelsh\WelshAcademy\src\main\java\database\Register.java
+C:\Users\George\Documents\Uni\Year 2\Semester 2\ICP 2152 - Java Technologies\JavaTech-LearnWelsh\WelshAcademy\src\main\java\questions\Gender.java
+C:\Users\George\Documents\Uni\Year 2\Semester 2\ICP 2152 - Java Technologies\JavaTech-LearnWelsh\WelshAcademy\src\main\java\database\AddAdminUser.java
+C:\Users\George\Documents\Uni\Year 2\Semester 2\ICP 2152 - Java Technologies\JavaTech-LearnWelsh\WelshAcademy\src\main\java\database\SaltAndHash.java
+C:\Users\George\Documents\Uni\Year 2\Semester 2\ICP 2152 - Java Technologies\JavaTech-LearnWelsh\WelshAcademy\src\main\java\questions\Translation.java
+C:\Users\George\Documents\Uni\Year 2\Semester 2\ICP 2152 - Java Technologies\JavaTech-LearnWelsh\WelshAcademy\src\main\java\questions\Question.java
+C:\Users\George\Documents\Uni\Year 2\Semester 2\ICP 2152 - Java Technologies\JavaTech-LearnWelsh\WelshAcademy\src\main\java\questions\QuestionGenerator.java
+C:\Users\George\Documents\Uni\Year 2\Semester 2\ICP 2152 - Java Technologies\JavaTech-LearnWelsh\WelshAcademy\src\main\java\database\Login.java
+C:\Users\George\Documents\Uni\Year 2\Semester 2\ICP 2152 - Java Technologies\JavaTech-LearnWelsh\WelshAcademy\src\main\java\database\SimpleDataSource.java
+C:\Users\George\Documents\Uni\Year 2\Semester 2\ICP 2152 - Java Technologies\JavaTech-LearnWelsh\WelshAcademy\src\main\java\database\LoginHandler.java
+>>>>>>> 61671124d3f8354014e355aef95344c65134a29e
