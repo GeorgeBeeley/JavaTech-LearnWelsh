@@ -1,9 +1,11 @@
+<%-- 
+    Document   : AddWordsPage
+    Created on : 02-May-2018, 22:29:15
+    Author     : Lawrence
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="utf-8" />
@@ -11,15 +13,15 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
         <link rel="icon" type="image/png" href="resources/dragon.png">
-        <link href="semantic/webfonts/fontawesome-all.css" rel="stylesheet">
         <link href="resources/css/main.css" rel="stylesheet">
+        <link href="semantic/webfonts/fontawesome-all.css" rel="stylesheet">
         <link href="semantic/css/semantic.min.css" rel="stylesheet" type="text/css"/>
         <script src="semantic/js/semantic.min.js" type="text/javascript"></script>
 
-        <title>Update Words | Welsh Academy</title>
+        <title>Add Words | Welsh Academy</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
     </head>
+
     <body>
         <div class="ui grid">
             <div class="ten wide centered column" style="position: relative;">
@@ -41,10 +43,10 @@ and open the template in the editor.
                         <a href="TestHistoryPage.html" class="item">
                             Test History
                         </a>
-                        <a href="AddWordsPage.html" class="item">
+                        <a href="AddWordsPage.html" class="item active">
                             Add Words
                         </a>
-                        <a href="UpdateWordsPage.html" class="item active">
+                        <a href="UpdateWordsPage.html" class="item">
                             Update Words
                         </a>
                     </nav>
@@ -59,29 +61,20 @@ and open the template in the editor.
                 </div>
             </div>
         </div>
-
         <div class="ui middle aligned center aligned grid main">
             <form>
                 <div class="ui form">
                     <div class="fields">
                         <div class="field">
-                            <label>Word Language</label>
-                            <select class="ui fluid search dropdown" name="Gender">
-                                <option value="">Language</option>
-                                <option value="E">English</option>
-                                <option value="W">Welsh</option>
-                            </select>
+                            <label>English Word</label>
+                            <input type="text" placeholder="Enter Word">
                         </div>
                         <div class="field">
-                            <label>Original Word</label>
-                            <input type="text" placeholder="Old Word">
+                            <label>Welsh Word</label>
+                            <input type="text" placeholder="Enter Word">
                         </div>
                         <div class="field">
-                            <label>Updated Word</label>
-                            <input type="text" placeholder="New Word">
-                        </div>
-                        <div class="field">
-                            <label>Gender</label>
+                            <label>Gender Classification</label>
                             <select class="ui fluid search dropdown" name="Gender">
                                 <option value="">Gender</option>
                                 <option value="M">Masculine</option>
@@ -97,57 +90,6 @@ and open the template in the editor.
                     </div>
                 </div>
             </form>
-
-            <table class="ui celled table words">
-                <thead>
-                    <tr>
-                        <th>English</th>
-                        <th>Welsh</th>
-                        <th>Gender (M/F)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                    </tr>
-                    <tr>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                    </tr>
-                    <tr>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th colspan="3">
-                            <div class="ui right floated pagination menu">
-                                <a class="icon item">
-                                    <i class="left chevron icon"></i>
-                                </a>
-                                <a class="item">1</a>
-                                <a class="item">2</a>
-                                <a class="item">3</a>
-                                <a class="item">4</a>
-                                <a class="icon item">
-                                    <i class="right chevron icon"></i>
-                                </a>
-                            </div>
-                        </th>
-                    </tr>
-                </tfoot>
-            </table>
-
-
         </div>
-
     </body>
 </html>
