@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
@@ -22,7 +23,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     </head>
-    <body>
+    <body>  
+        <%@ page import = "java.sql.*"%>
+        <%
+            Class.forName("com.mysql.jdbc.Driver");
+
+            String url = "jdbc:mysql://localhost/welshtranslate";
+
+            String user = "root";
+            String password = "Goods333";
+
+            try {
+                Connection con = DriverManager.getConnection(url, user, password);%>
         <div class="ui grid">
             <div class="ten wide centered column" style="position: relative;">
                 <div class="row">
@@ -109,22 +121,32 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
+                    <tr><%Statement st = null;
+                        ResultSet rs = null;
+                        String engWord;
+                        String welshWord;
+                        String gender;
+                        st = con.createStatement();
+                        rs = st.executeQuery("SELECT * FROM words");
+                        while (rs.next()) {
+                            engWord = rs.getString("English");%>
+                        <td><%= engWord%></td>
+                        <%welshWord = rs.getString("Welsh");%>
+                        <td><%= welshWord%></td>
+                        <%gender = rs.getString("gender");%>
+                        <td><%= gender%></td><tr></tr>
+                        <%         }
+
+                            } catch (Exception e) {
+                                out.println(e.getMessage());
+                                e.printStackTrace();
+                            }
+                        %>
                     </tr>
                     <tr>
                         <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
                     </tr>
                     <tr>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
                         <td>Cell</td>
                     </tr>
                 </tbody>
@@ -150,6 +172,5 @@
 
 
         </div>
-
     </body>
 </html>
