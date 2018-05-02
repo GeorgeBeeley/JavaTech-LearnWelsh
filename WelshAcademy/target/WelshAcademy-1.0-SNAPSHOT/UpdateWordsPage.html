@@ -9,7 +9,7 @@ and open the template in the editor.
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
+        <link href="semantic/webfonts/fontawesome-all.css" rel="stylesheet">
         <link href="semantic/css/semantic.min.css" rel="stylesheet" type="text/css"/>
         <script src="semantic/js/semantic.min.js" type="text/javascript"></script>
 
@@ -37,11 +37,13 @@ and open the template in the editor.
             <div class="column">
                 <div class="row">
                     <div class="logo right">
-                        <img class="ui image" src="resources/LOGO.png" alt="Welsh Academy">
+                        <h1>
+                            <a href="WelcomePage.html"><img class="ui image logo" src="resources/LOGO.png" alt="Welsh Academy"></a>
+                        </h1>
                     </div>
                 </div>
-                <div class="">
-                    <div class="ui red five item inverted menu">
+                <div>
+                    <nav class="ui red five item inverted menu">
                         <a href="WelcomePage.html" class="item">
                             Home
                         </a>
@@ -57,7 +59,7 @@ and open the template in the editor.
                         <a href="TestHistoryPage.html" class="item">
                             Test History
                         </a>
-                    </div>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -90,8 +92,11 @@ and open the template in the editor.
                             </select>
                         </div>
                     </div>
-                    <div class="field">
-                        <div class="ui button float right" tabindex="0">Append Word</div>
+                    <div class="ui vertical animated button right" tabindex="0">
+                        <div class="visible content">Submit</div>
+                        <div class="hidden content">
+                            <i class="fas fa-check"></i>
+                        </div>
                     </div>
                 </div>
             </form>
