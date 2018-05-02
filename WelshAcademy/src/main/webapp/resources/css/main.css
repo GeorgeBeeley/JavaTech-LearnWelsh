@@ -1,4 +1,4 @@
-/* Global classes */
+/* Global styles */
 .column {
     margin-top: 10px;
     max-width: 600px;
@@ -32,8 +32,9 @@
 .rtop {
     padding-top: 30px;
 }
-
-
+.centertext {
+    text-align: center;
+}
 
 /* Index.html classes */
 .login-register-form {
@@ -67,7 +68,6 @@
 }
 
 
-
 /* TestPage.html classes */
 .logo-mini {
     max-width: 150px;
@@ -97,11 +97,17 @@
 .option {
     padding: 20px;
     max-width: 44%;
-    height: 100px;
+    height: 120px;
     margin: 0 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    /*display: block;*/
 }
 .answer {
-
+    line-height: 1em;
+    font-size: 20px;
+    font-size: 1.4em;
 }
 .column > .ui.segment.incorrect {
     background-color: rgba(220, 40, 40, 0.8) !important;
