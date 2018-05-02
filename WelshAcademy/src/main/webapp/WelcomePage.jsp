@@ -33,19 +33,19 @@
                 </div>
                 <div>
                     <nav class="ui red five item inverted menu">
-                        <a href="WelcomePage.html" class="item active">
+                        <a href="WelcomePage.jsp" class="item active">
                             Home
                         </a>
-                        <a href="TestPage.html" class="item">
+                        <a href="TestPage.jsp" class="item">
                             Test Yourself
                         </a>
-                        <a href="TestHistoryPage.html" class="item">
+                        <a href="TestHistoryPage.jsp" class="item">
                             Test History
                         </a>
-                        <a href="AddWordsPage.html" class="item">
+                        <a href="AddWordsPage.jsp" class="item">
                             Add Words
                         </a>
-                        <a href="UpdateWordsPage.html" class="item">
+                        <a href="UpdateWordsPage.jsp" class="item">
                             Update Words
                         </a>
                     </nav>
@@ -54,7 +54,7 @@
 
             <div class="rtop popout" style="padding-left: 0; padding-right: 0;">
                 <div class="ui floating right icon button" style="border-radius: 5px 0 0 5px; max-width: 95px;" id="slide">
-                    <a href="index.html">
+                    <a href="index.jsp">
                         <i class="fas fa-sign-out-alt"></i>
                         <span class="text" style="padding-left: 10px;">Logout</span>
                     </a>

@@ -37,7 +37,7 @@
                 
                 <div class="ui">
                     <h1>
-                        <a href="WelcomePage.html"><img class="ui image logo-large" src="resources/LOGO.png" alt="Welsh Academy"></a>
+                        <a href="WelcomePage.jsp"><img class="ui image logo-large" src="resources/LOGO.png" alt="Welsh Academy"></a>
                     </h1>
                 </div>
                 
