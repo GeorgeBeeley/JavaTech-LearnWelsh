@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
             
             dbm.closeConnection();
             
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.html");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
             PrintWriter out= response.getWriter();
             switch(log){
                 case SUCCESS:
