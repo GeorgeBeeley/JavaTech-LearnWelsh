@@ -6,11 +6,165 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+        <link href="semantic/css/semantic.min.css" rel="stylesheet" type="text/css"/>
+        <script src="semantic/js/semantic.min.js" type="text/javascript"></script>
+
+        <title>Welsh Academy - Test History</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            .column {
+                margin-top: 10px;
+                max-width: 600px;
+                align-content: center;
+            }
+            .logo {
+                max-width: 150px;
+                margin-bottom: 10px;
+            }
+            .right {
+                float: right;
+            }
+            .rmargin {
+                margin-right: 10px;
+            }
+            .questionCount {
+                margin-top: 25px !important;
+            }
+            .answers {
+                padding: 35px !important;
+            }
+            .column > .ui.segment {
+                transition: background-color 0.12s ease
+            }
+            .column > .ui.segment:hover {
+                background: #eee;
+            }
+            .answer {
+                padding: 20px;
+                max-width: 150px;
+                max-height: 150px;
+                margin: 0 auto;
+            }
+            .column > .ui.segment.incorrect {
+                background-color: rgba(220, 40, 40, 0.8) !important;
+            }
+            .column > .ui.segment.correct {
+                background-color: rgba(40, 220, 40, 0.8) !important;
+            }
+        </style>
     </head>
+
     <body>
-        <div>TODO write content</div>
+        <div class="ui center aligned grid">
+            <div class="column">
+
+                <div class="row">
+                    <div class="logo right">
+                        <h1>
+                            <a href="WelcomePage.html"><img class="ui image logo" src="resources/LOGO.png" alt="Welsh Academy"></a>
+                        </h1>
+                    </div>
+                </div>
+
+                <div>
+                    <nav class="ui red five item inverted menu">
+                        <a href="WelcomePage.html" class="item">
+                            Home
+                        </a>
+                        <a href="AddWordsPage.html" class="item">
+                            Add Words
+                        </a>
+                        <a href="UpdateWordsPage.html" class="item">
+                            Update Words
+                        </a>
+                        <a href="TestPage.html"  class="item active">
+                            Tests
+                        </a>
+                        <a href="TestHistoryPage.html" class="item">
+                            Test History
+                        </a>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="ui center aligned grid" style="margin-top: 75px;">
+            <div style="text-align: center;">
+
+                <!-- Test area -->
+                <div class="ui segment text container" id="test">
+    
+                    <h1 class="ui questionCount"><span id="qNum">1</span>/20</h1>
+
+                    <h2 class="ui header" id="questionText">
+                        Multiple choice question with 4 answers text placeholder, what is ___ in Welsh?
+                    </h2>
+
+                    <!-- multiple choice with maximum four answers-->
+                    <div class="answers" id="multiple-four">
+
+                        <div class="ui two column grid container">
+                            <div class="column">
+                                <div class="ui segment" id="answer1">
+                                    <img src="resources/userIcon.png" class="ui wireframe image answer" alt="placeholder">
+                                </div>
+                                <div class="ui hidden divider"></div>
+                                <div class="ui segment" id="answer2">
+                                    <img src="resources/userIcon.png" class="ui wireframe image answer" alt="placeholder">
+                                </div>
+                            </div>
+
+                            <div class="column">
+                                <div class="ui segment" id="answer3">
+                                    <img src="resources/userIcon.png" class="ui wireframe image answer" alt="placeholder">
+                                </div>
+                                <div class="ui hidden divider"></div>
+                                <div class="ui segment" id="answer4">
+                                    <img src="resources/userIcon.png" class="ui wireframe image answer" alt="placeholder">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- END multiple choice with four answers -->
+                
+                    <!-- text input answer question-->
+                    <div class="test" id="text-answer">
+
+                        <div class="ui two column grid container answers">
+
+                            <div class="column">
+                                <div class="ui segment" id="answer1">
+                                    <img src="resources/userIcon.png" class="ui wireframe image answer" alt="placeholder">
+                                </div>
+                            </div>
+
+                            <div class="column">
+                                <div class="ui segment" id="answer2">
+                                    <img src="resources/userIcon.png" class="ui wireframe image answer" alt="placeholder">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- END multiple choice with four answers -->
+                
+                </div>
+                <!-- Test area end -->
+
+            </div>
+        </div> 
+
+        <footer>
+            <div class="right rmargin">
+                <a href="index.html">logout</a>
+            </div>
+        </footer>
+
     </body>
 </html>
