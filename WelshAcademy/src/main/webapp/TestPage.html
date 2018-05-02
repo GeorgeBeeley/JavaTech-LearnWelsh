@@ -9,7 +9,7 @@ and open the template in the editor.
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
+        <link href="semantic/webfonts/fontawesome-all.css" rel="stylesheet">
         <link href="semantic/css/semantic.min.css" rel="stylesheet" type="text/css"/>
         <script src="semantic/js/semantic.min.js" type="text/javascript"></script>
 
@@ -28,8 +28,17 @@ and open the template in the editor.
             .right {
                 float: right;
             }
-            .rmargin {
-                margin-right: 10px;
+            .rtop{
+                margin-top: 30px;
+            }
+            #slide {
+                position: absolute;
+                right: -60px;
+                transition: 1s;
+            }
+            .popout:hover #slide {
+                transition: 0.5s;
+                right: -5px;
             }
             .questionCount {
                 margin-top: 25px !important;
@@ -59,9 +68,8 @@ and open the template in the editor.
     </head>
 
     <body>
-        <div class="ui center aligned grid">
-            <div class="column">
-
+        <div class="ui grid">
+            <div class="ten wide centered column" style="position: relative;">
                 <div class="row">
                     <div class="logo right">
                         <h1>
@@ -69,7 +77,6 @@ and open the template in the editor.
                         </h1>
                     </div>
                 </div>
-
                 <div>
                     <nav class="ui red five item inverted menu">
                         <a href="WelcomePage.html" class="item">
@@ -81,18 +88,22 @@ and open the template in the editor.
                         <a href="UpdateWordsPage.html" class="item">
                             Update Words
                         </a>
-                        <a href="TestPage.html"  class="item active">
+                        <a href="TestPage.html" class="item active">
                             Tests
                         </a>
                         <a href="TestHistoryPage.html" class="item">
                             Test History
                         </a>
                     </nav>
-
+                </div>
+            </div>
+            <div class="rtop popout">
+                <div class="ui floating right icon button" style="border-radius: 5px 0 0 5px;" id="slide">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="text" style="padding-left: 10px;">Logout</span>
                 </div>
             </div>
         </div>
-
         <div class="ui center aligned grid" style="margin-top: 75px;">
             <div style="text-align: center;">
 
@@ -159,12 +170,5 @@ and open the template in the editor.
 
             </div>
         </div> 
-
-        <footer>
-            <div class="right rmargin">
-                <a href="index.html">logout</a>
-            </div>
-        </footer>
-
     </body>
 </html>

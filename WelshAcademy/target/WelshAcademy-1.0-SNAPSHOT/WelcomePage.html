@@ -37,8 +37,17 @@ and open the template in the editor.
             .right{
                 float: right;
             }
-            .rmargin{
-                margin-right: 10px;
+            .rtop{
+                margin-top: 30px;
+            }
+            #slide {
+                position: absolute;
+                right: -60px;
+                transition: 1s;
+            }
+            .popout:hover #slide {
+                transition: 0.5s;
+                right: -5px;
             }
         </style>
     </head>
@@ -74,10 +83,5 @@ and open the template in the editor.
                 </div>
             </div>
         </div>
-        <footer>
-            <div class="right rmargin">
-                <a href="index.html">logout</a>
-            </div>
-        </footer>
     </body>
 </html>
