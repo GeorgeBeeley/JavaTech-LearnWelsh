@@ -8,7 +8,9 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -36,22 +38,32 @@ public class LoginServlet extends HttpServlet {
             DatabaseManager dbm = new DatabaseManager();
             LoginHandler login = new LoginHandler(dbm);
             
-            Login l = login.login(request.getParameter("email"),request.getParameter("password"));
-            switch(l){
+            String user = request.getParameter("email");
+            Login log = login.login(user,request.getParameter("password"));
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.html");
+            PrintWriter out= response.getWriter();
+            switch(log){
                 case SUCCESS:
-                    
+                    Cookie loginCookie = new Cookie("user",user);
+                    loginCookie.setMaxAge(60*60); //1 hour
+                    response.addCookie(loginCookie);
+                    response.sendRedirect("WelcomePage.jsp");
                     break;
                 case NO_USER:
-                    
+                    out.println("<font color=red>This email is not registered.</font>");
+                    rd.include(request, response);
                     break;
                 case WRONG_PASS:
-                    
+                    out.println("<font color=red>Incorrect email or password.</font>");
+                    rd.include(request, response);
                     break;
                 case FAILED:
-                    
+                    out.println("<font color=red>Internal Server Error.</font>");
+                    rd.include(request, response);
                     break;
                 default:
-                    //decline
+                    out.println("<font color=red>Internal Server Error.</font>");
+                    rd.include(request, response);
                     break;
             }
         } catch (ClassNotFoundException | SQLException ex) {
