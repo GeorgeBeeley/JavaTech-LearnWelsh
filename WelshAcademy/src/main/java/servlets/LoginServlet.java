@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- *
+ * logs in user
  * @author Jack
  */
 public class LoginServlet extends HttpServlet {
@@ -34,13 +34,15 @@ public class LoginServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
         try {
             DatabaseManager dbm = new DatabaseManager();
             LoginHandler login = new LoginHandler(dbm);
             
             String user = request.getParameter("email");
             Login log = login.login(user,request.getParameter("password"));
+            
+            dbm.closeConnection();
+            
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.html");
             PrintWriter out= response.getWriter();
             switch(log){
@@ -55,17 +57,17 @@ public class LoginServlet extends HttpServlet {
                 case NO_USER:
                     out.println("<script type='text/javascript'>alert('This email is not registered');</script>");
                     rd.include(request, response);
-                    response.sendRedirect("/index.html");
+                    response.sendRedirect("/index.jsp");
                     break;
                 case WRONG_PASS:
                     out.println("<script type='text/javascript'>alert('Invalid email or password');</script>");
                     rd.include(request, response);
-                    response.sendRedirect("/index.html");
+                    response.sendRedirect("/index.jsp");
                     break;
                 case FAILED:
                     out.println("<script type='text/javascript'>alert('Internal Server Error');</script>");
                     rd.include(request, response);
-                    response.sendRedirect("/index.html");
+                    response.sendRedirect("/index.jsp");
                     break;
                 default:
                     out.println("<script type='text/javascript'>alert('Internal Server Error');</script>");
