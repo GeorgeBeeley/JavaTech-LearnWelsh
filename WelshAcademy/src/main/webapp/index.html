@@ -15,17 +15,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <script type="text/javascript">
-            function toggleRegister() {
-                var e = document.getElementById('registration');
-                var d = document.getElementById('login');
-                e.style.display = 'block';
-                d.style.display = 'none';
-            }
-            function toggleLogin() {
-                var e = document.getElementById('registration');
-                var d = document.getElementById('login');
-                e.style.display = 'none';
-                d.style.display = 'block';
+            function toggleForms() {
+                var r = document.getElementById('registration');
+                var l = document.getElementById('login');
+                r.classList.toggle('is-visible');
+                l.classList.toggle('is-visible');
             }
         </script>
     </head>
@@ -41,7 +35,7 @@
                 </div>
                 
                 <div class="authentication">
-                    <form class="ui form" id="login">
+                    <form class="ui form is-visible" id="login" action="POST">
                         <h2>Sign in</h2>
                         <div class="field">
                             <input type="text" placeholder="username"/>
@@ -49,11 +43,11 @@
                         <div class="field">
                             <input type="password" placeholder="password"/>
                         </div>
-                        <p>Not registered? <a href="#" onclick="toggleRegister(); ">Create an account</a></p>
+                        <p>Not registered? <a href="#" id="reg" onclick="toggleForms(); ">Create an account</a></p>
                         <button class="ui green button">Login</button>
                     </form>
 
-                    <form class="ui form" id="registration" style="display: none;">
+                    <form class="ui form" id="registration" action="POST">
                         <h2>Register</h2>
                         <div class="field">
                             <input type="text" placeholder="first name"/>
@@ -67,7 +61,7 @@
                         <div class="field">
                             <input type="password" placeholder="password"/>
                         </div>
-                        <p>Already registered? <a href="#" onclick="toggleLogin('login')">Sign In</a></p>
+                        <p>Already registered? <a href="#" id="log" onclick="toggleForms()">Sign In</a></p>
                         <button class="ui green button">Create</button>
                     </form>
                 </div>

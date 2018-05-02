@@ -39,6 +39,7 @@
     margin-top: 75px !important;
 }
 
+
 /* Index.html classes */
 .login-register-form {
     max-width: 600px;
@@ -49,6 +50,16 @@
     max-width: 350px;
     margin: 0 auto;
     text-align: center;
+}
+.authentication > .ui.form {
+    display: none;
+    height: 0;
+    overflow: hidden;
+    transition: height 300ms ease-in-out;
+}
+.authentication > .ui.form.is-visible {
+    display: block;
+    height: auto;
 }
 .logo-large {
     margin: 1rem 0;
