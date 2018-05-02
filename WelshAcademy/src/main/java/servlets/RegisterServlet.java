@@ -1,11 +1,20 @@
 package servlets;
 
+import database.DatabaseManager;
+import database.LoginHandler;
+import database.Register;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -25,17 +34,48 @@ public class RegisterServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet RegisterServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet RegisterServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        try {
+            DatabaseManager dbm = new DatabaseManager();
+            LoginHandler login = new LoginHandler(dbm);
+            
+            String user = request.getParameter("email");
+            String pass = request.getParameter("password");
+            String forname = request.getParameter("forname");
+            String surname = request.getParameter("surname");
+            Register reg = login.registerUser(user,pass,forname,surname);
+            
+            dbm.closeConnection();
+            
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
+            PrintWriter out= response.getWriter();
+            switch(reg){
+                case REGISTERED:
+                    HttpSession session = request.getSession();
+                    Cookie loginCookie = new Cookie("user",user);
+                    loginCookie.setMaxAge(60*60); //1 hour
+                    response.addCookie(loginCookie);
+                    session.setAttribute("User", user);
+                    response.sendRedirect("/WelcomePage.jsp");
+                    break;
+                case ALREADY_EXISTS:
+                    out.println("<script type='text/javascript'>alert('This email is already registered');</script>");
+                    rd.include(request, response);
+                    response.sendRedirect("/index.jsp");
+                    break;
+                case FAILED:
+                    out.println("<script type='text/javascript'>alert('Internal Server Error');</script>");
+                    rd.include(request, response);
+                    response.sendRedirect("/index.jsp");
+                    break;
+                default:
+                    out.println("<script type='text/javascript'>alert('Internal Server Error');</script>");
+                    rd.include(request, response);
+                    response.sendRedirect("/index.jsp");
+                    break;
+            }
+            
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
