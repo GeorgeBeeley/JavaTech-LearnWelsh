@@ -28,25 +28,25 @@
                 <div class="row">
                     <div class="logo-mini right">
                         <h1>
-                            <a href="WelcomePage.html"><img class="ui image" src="resources/LOGO.png" alt="Welsh Academy"></a>
+                            <a href="WelcomePage.jsp"><img class="ui image" src="resources/LOGO.png" alt="Welsh Academy"></a>
                         </h1>
                     </div>
                 </div>
                 <div>
                     <nav class="ui red five item inverted menu">
-                        <a href="WelcomePage.html" class="item">
+                        <a href="WelcomePage.jsp" class="item">
                             Home
                         </a>
-                        <a href="TestPage.html" class="item active">
+                        <a href="TestPage.jsp" class="item active">
                             Test Yourself
                         </a>
-                        <a href="TestHistoryPage.html" class="item">
+                        <a href="TestHistoryPage.jsp" class="item">
                             Test History
                         </a>
-                        <a href="AddWordsPage.html" class="item">
+                        <a href="AddWordsPage.jsp" class="item">
                             Add Words
                         </a>
-                        <a href="UpdateWordsPage.html" class="item">
+                        <a href="UpdateWordsPage.jsp" class="item">
                             Update Words
                         </a>
                     </nav>
@@ -55,7 +55,7 @@
 
             <div class="rtop popout" style="padding-left: 0; padding-right: 0;">
                 <div class="ui floating right icon button" id="slide">
-                    <a href="index.html">
+                    <a href="index.jsp">
                         <i class="fas fa-sign-out-alt"></i>
                         <span class="text" style="padding-left: 10px;">Logout</span>
                     </a>
