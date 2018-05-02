@@ -53,25 +53,24 @@ public class LoginServlet extends HttpServlet {
                     response.sendRedirect("/WelcomePage.jsp");
                     break;
                 case NO_USER:
-                    out.println("<font color=red>This email is not registered.</font>");
+                    out.println("<script type='text/javascript'>alert('This email is not registered');</script>");
                     rd.include(request, response);
-                    
                     response.sendRedirect("/index.html");
                     break;
                 case WRONG_PASS:
-                    out.println("<font color=red>Incorrect email or password.</font>");
+                    out.println("<script type='text/javascript'>alert('Invalid email or password');</script>");
                     rd.include(request, response);
                     response.sendRedirect("/index.html");
                     break;
                 case FAILED:
-                    out.println("<font color=red>Internal Server Error.</font>");
+                    out.println("<script type='text/javascript'>alert('Internal Server Error');</script>");
                     rd.include(request, response);
                     response.sendRedirect("/index.html");
                     break;
                 default:
-                    out.println("<font color=red>Internal Server Error.</font>");
+                    out.println("<script type='text/javascript'>alert('Internal Server Error');</script>");
                     rd.include(request, response);
-                    response.sendRedirect("/index.html");
+                    response.sendRedirect("/index.jsp");
                     break;
             }
             
