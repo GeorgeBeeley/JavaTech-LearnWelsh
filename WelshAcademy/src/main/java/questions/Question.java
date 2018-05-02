@@ -1,10 +1,12 @@
 package questions;
 
+import java.io.Serializable;
+
 /**
  * a question and answer
  * @author Jack
  */
-public class Question {
+public class Question implements Serializable{
     
     private final String rightAnswer;
     private final String question;

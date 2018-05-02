@@ -1,0 +1,150 @@
+food	bwyd	M	
+almonds	cnau almon	F	
+bread	bara	M	
+breakfast	brecwast	M	
+butter	menyn	M	
+candy	candy	F	
+cheese	caws	M	
+chicken	cyw iâr	M	
+dessert	pwdin	M	
+dinner	cinio	M	
+fish	pysgod	M	
+fruit	ffrwythau	M	
+ice cream	hufen ia	M	
+lamb	cig oen	M	
+lemon	lemon	F	
+lunch	cinio	M	
+meal	pryd	M	
+meat	cig	M	
+oven	popty	F	
+pepper	pupur	M	
+plants	planhigion	M	
+pork	porc	M	
+salad	salad	M	
+salt	halen	M	
+sandwich	brechdan	F	
+sausage	selsig	F	
+soup	Cawl	M	
+sugar	siwgr	M	
+supper	swper	F	
+turkey	twrci	M	
+apple	afal	F	
+banana	banana	M	
+oranges	orennau	M	
+peaches	eirin gwlanog	F	
+peanut	cnau mwnci	M		
+pears	gellyg	F	
+pineapple	phin-afal	M	
+grapes	grawnwin	M	
+strawberries	mefus	F	
+vegetables	llysiau	M	
+carrot	moron	F	
+corn	yd	M	
+cucumber	ciwcymbr	M	
+garlic	garlleg	M	
+lettuce	letys	F	
+olives	olewydd	F	
+onions	winwns	M	
+peppers	pupur	M	
+potatoes	tatws	M	
+pumpkin	pwmpen	M	
+beans	ffa	F	
+tomatoes	tomatos	M	
+alligator	alligator	M	
+alligators	alligators	M	
+bear	arth	F	
+bears	yn dwyn	F	
+bird	aderyn	M	
+birds	adar	M	
+bull	tarw	M	
+bulls	teirw	M	
+cat	cath	F	
+cats	cathod	F	
+cow	buwch	F	
+cows	gwartheg	F	
+deer	ceirw	M	
+many deer	llawer ceirw	M	
+dog	ci	M	
+dogs	cwn	M	
+donkey	asyn	M	
+donkeys	asynnod	M	
+eagle	eryr	M	
+eagles	eryrod	M	
+elephant	eliffant	M	
+elephants	eliffantod	M	
+giraffe	jiraff	M	
+giraffes	giraffes	M	
+goat	gafr	F	
+goats	geifr	F	
+horse	ceffyl	M	
+horses	ceffylau	M	
+lion	llew	M	
+lions	lewod	M	
+monkey	mwnci	M	
+monkeys	mwnciod	M	
+mouse	llygoden	F	
+mice	llygod	F	
+rabbit	cwningen	F	
+rabbits	cwningod	F	
+snake	neidr	F	
+snakes	nadroedd	F	
+tiger	teigr	M	
+tigers	teigrod	M	
+wolf	blaidd	M	
+wolves	blaidd	M	
+objects	gwrthrychau	M	
+bathroom	ystafell ymolchi	F	
+bed	gwely	M	
+bedroom	ystafell wely	F	
+ceiling	nenfwd	F	
+chair	cadeirydd	F	
+clothes	dillad	M	
+coat	cot	F	
+cup	cup	M	
+desk	desg	F	
+dress	ffrog	F	
+floor	llawr	M	
+fork	fforc	F	
+furniture	dodrefn	M	
+glass	gwydr	M	
+hat	het	F	
+house	ty	M	
+ink	inc	M	
+jacket	siaced	F	
+kitchen	cegin	F	
+knife	cyllell	F	
+lamp	lamp	F	
+letter	llythyr	M	
+map	map	F	
+newspaper	papur newydd	M	
+notebook	notebook	M	
+trousers	trowsus	M	
+paper	papur	M	
+pen	pen	M	
+pencil	pensil	F	
+pharmacy	fferyllfa	F	
+picture	llun	M	
+plate	Plat	M	
+refrigerator	oergell	F	
+restaurant	bwyty	M	
+roof	to	M	
+room	ystafell	F	
+rug	hug	F	
+scissors	siswrn	M	
+shampoo	siampw	M	
+shirt	Crys	M	
+shoes	esgidiau	F	
+soap	sebon	M	
+socks	Sanau	M	
+spoon	lwy	F	
+table	tabl	M	
+toilet	toiled	M	
+toothbrush	brws dannedd	M	
+toothpaste	past dannedd	M	
+towel	liain	M	
+umbrella	ymbarel	M	
+underwear	isaf	M	
+wall	wal	F	
+wallet	waled	F	
+window	ffenest	F	
+telephone	dros y ffon	F	
