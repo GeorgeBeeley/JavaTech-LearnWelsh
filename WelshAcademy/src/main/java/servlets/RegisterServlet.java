@@ -1,8 +1,8 @@
 package servlets;
 
 import database.DatabaseManager;
-import database.Login;
 import database.LoginHandler;
+import database.Register;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -17,10 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * logs in user
+ *
  * @author Jack
  */
-public class LoginServlet extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,14 +39,17 @@ public class LoginServlet extends HttpServlet {
             LoginHandler login = new LoginHandler(dbm);
             
             String user = request.getParameter("email");
-            Login log = login.login(user,request.getParameter("password"));
+            String pass = request.getParameter("password");
+            String forname = request.getParameter("forname");
+            String surname = request.getParameter("surname");
+            Register reg = login.registerUser(user,pass,forname,surname);
             
             dbm.closeConnection();
             
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
             PrintWriter out= response.getWriter();
-            switch(log){
-                case SUCCESS:
+            switch(reg){
+                case REGISTERED:
                     HttpSession session = request.getSession();
                     Cookie loginCookie = new Cookie("user",user);
                     loginCookie.setMaxAge(60*60); //1 hour
@@ -54,13 +57,8 @@ public class LoginServlet extends HttpServlet {
                     session.setAttribute("User", user);
                     response.sendRedirect("/WelcomePage.jsp");
                     break;
-                case NO_USER:
-                    out.println("<script type='text/javascript'>alert('This email is not registered');</script>");
-                    rd.include(request, response);
-                    response.sendRedirect("/index.jsp");
-                    break;
-                case WRONG_PASS:
-                    out.println("<script type='text/javascript'>alert('Invalid email or password');</script>");
+                case ALREADY_EXISTS:
+                    out.println("<script type='text/javascript'>alert('This email is already registered');</script>");
                     rd.include(request, response);
                     response.sendRedirect("/index.jsp");
                     break;

@@ -90,7 +90,7 @@ public class LoginHandler {
         try{
             String salt = SaltAndHash.generateSalt();
             String securePass = SaltAndHash.saltAndHash(password, salt);
-            String[] inputData = {"0",securePass,salt,forname,surname,email,"Student"};
+            String[] inputData = {"0",securePass,salt,forname,surname,email,"user"};
             //check if already user exists
             String[] existingUsers = dm.getColumn("Users", "email");
             if(existingUsers.length == 0){ //problem accessing database or table is empty due to some error
@@ -132,7 +132,7 @@ public class LoginHandler {
      * @param permisions
      * @return successful or type of error 
      */
-    public Register registerUser(String password,String forname,String surname,String email,String permisions){
+    public Register registerUser(String email,String password,String forname,String surname,String permisions){
         
         Register reg = Register.FAILED;
         
