@@ -38,7 +38,7 @@ and open the template in the editor.
                 float: right;
             }
             .rtop{
-                margin-top: 30px;
+                padding-top: 30px;
             }
             #slide {
                 position: absolute;
@@ -52,34 +52,43 @@ and open the template in the editor.
         </style>
     </head>
     <body>
-        <div class="ui middle aligned center aligned grid">
-            <div class="column">
-                <div class="ui aligned center">
-                    <h1>
-                        <img class="ui image logo" src="resources/LOGO.png" alt="Welsh Academy">                    
-                    </h1>
+        <div class="ui grid">
+            <div class="ten wide centered column" style="position: relative;">
+                <div class="row">
+                    <div class="logo right">
+                        <h1>
+                            <a href="WelcomePage.html"><img class="ui image logo" src="resources/LOGO.png" alt="Welsh Academy"></a>
+                        </h1>
+                    </div>
                 </div>
-                <nav class="ui red five item inverted menu">
-                    <a href="WelcomePage.html" class="item active">
-                        Home
-                    </a>
-                    <a href="AddWordsPage.html" class="item">
-                        Add Words
-                    </a>
-                    <a href="UpdateWordsPage.html" class="item">
-                        Update Words
-                    </a>
-                    <a href="TestPage.html" class="item">
-                        Tests
-                    </a>
-                    <a href="TestHistoryPage.html" class="item">
-                        Test History
-                    </a>
-                </nav>
-
-                <div class="ui ">
-                    <img class="icon logo" src="resources/userIcon.png" alt="Account Icon">
-                    <h2>Welcome User</h2>
+                <div>
+                    <nav class="ui red five item inverted menu">
+                        <a href="WelcomePage.html" class="item active">
+                            Home
+                        </a>
+                        <a href="AddWordsPage.html" class="item">
+                            Add Words
+                        </a>
+                        <a href="UpdateWordsPage.html" class="item">
+                            Update Words
+                        </a>
+                        <a href="TestPage.html" class="item">
+                            Tests
+                        </a>
+                        <a href="TestHistoryPage.html" class="item">
+                            Test History
+                        </a>
+                    </nav>
+                </div>
+                <div class="ui">
+                    <img class="ui centered image icon logo" src="resources/userIcon.png" alt="Account Icon">
+                    <h2 style="text-align: center;">Welcome User</h2>
+                </div>
+            </div>
+            <div class="rtop popout" style="padding-left: 0; padding-right: 0;">
+                <div class="ui floating right icon button" style="border-radius: 5px 0 0 5px; max-width: 95px;" id="slide">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="text" style="padding-left: 10px;">Logout</span>
                 </div>
             </div>
         </div>
