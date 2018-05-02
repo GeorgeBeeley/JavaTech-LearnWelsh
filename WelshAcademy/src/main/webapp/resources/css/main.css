@@ -35,6 +35,9 @@
 .centertext {
     text-align: center;
 }
+.grid.main {
+    margin-top: 75px !important;
+}
 
 /* Index.html classes */
 .login-register-form {
