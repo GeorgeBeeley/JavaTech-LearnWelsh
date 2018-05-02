@@ -14,6 +14,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -44,44 +45,38 @@ public class LoginServlet extends HttpServlet {
             PrintWriter out= response.getWriter();
             switch(log){
                 case SUCCESS:
+                    HttpSession session = request.getSession();
                     Cookie loginCookie = new Cookie("user",user);
                     loginCookie.setMaxAge(60*60); //1 hour
                     response.addCookie(loginCookie);
-                    response.sendRedirect("WelcomePage.jsp");
+                    session.setAttribute("User", user);
+                    response.sendRedirect("/WelcomePage.jsp");
                     break;
                 case NO_USER:
                     out.println("<font color=red>This email is not registered.</font>");
                     rd.include(request, response);
+                    
+                    response.sendRedirect("/index.html");
                     break;
                 case WRONG_PASS:
                     out.println("<font color=red>Incorrect email or password.</font>");
                     rd.include(request, response);
+                    response.sendRedirect("/index.html");
                     break;
                 case FAILED:
                     out.println("<font color=red>Internal Server Error.</font>");
                     rd.include(request, response);
+                    response.sendRedirect("/index.html");
                     break;
                 default:
                     out.println("<font color=red>Internal Server Error.</font>");
                     rd.include(request, response);
+                    response.sendRedirect("/index.html");
                     break;
             }
+            
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
         }
     }
 
