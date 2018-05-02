@@ -132,3 +132,12 @@
 .row > #text-answer {
     width: inherit;
 }
+
+
+/* Update-Words.html styles */
+.ui.grid > table {
+    padding: 0;
+}
+.table.words {
+    max-width: 800px;
+}

@@ -64,6 +64,10 @@ and open the template in the editor.
         <div class="ui center aligned grid main">
             <div class="centertext">
 
+                <form id="getTest" action="/JavaTechLearnWelsh/NewTest" method="GET">
+                    <input class="large ui button green" type="submit" value="Start New Test" />
+                </form>
+                
                 <!-- Test area -->
                 <div class="ui segment text container" id="test">
 
@@ -107,10 +111,9 @@ and open the template in the editor.
                             <div class="row">
                                 <div id="text-answer">
 
-                                    <div class="ui massive icon input">
+                                    <div class="ui massive input">
                                         <input placeholder="You got this..." type="text" name="answer">
-                                        <!--<i class="search icon"></i>-->
-                                    </div>
+                                    </div>                                        
 
                                 </div>
                             </div>
