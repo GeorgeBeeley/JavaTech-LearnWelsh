@@ -10,6 +10,28 @@
 .hundredheight {
     height: 100%;
 }
+#slide {
+    position: absolute;
+    right: -60px;
+    transition: 1s;
+}
+.popout:hover #slide {
+    transition: 0.5s;
+    right: -5px;
+}
+/*.logout {
+    max-width: 100px;
+}*/
+.ui.floating.button#slide {
+    border-radius: 5px 0 0 5px;
+    max-width: 95px;
+}
+.icon {
+    width: 150px;
+}
+.rtop {
+    padding-top: 30px;
+}
 
 
 
@@ -28,7 +50,6 @@
     margin: 1rem 0;
     padding: 1em 1em;
 }
-
 
 
 /* WelcomePage.html */
