@@ -1,0 +1,93 @@
+/* Global classes */
+.column {
+    margin-top: 10px;
+    max-width: 600px;
+    /*align-content: center;*/
+}
+.right{
+    float: right;
+}
+.hundredheight {
+    height: 100%;
+}
+
+
+
+/* Index.html classes */
+.login-register-form {
+    max-width: 600px;
+    align-content: center;
+    margin: auto 0;
+}
+.login-register-form .authentication {
+    max-width: 350px;
+    margin: 0 auto;
+    text-align: center;
+}
+.logo-large {
+    margin: 1rem 0;
+    padding: 1em 1em;
+}
+
+
+
+/* WelcomePage.html */
+.logo {
+    padding: 1em 1em;
+}
+.icon {
+    width: 150px;
+}
+.logout{
+    max-width: 100px;
+}
+.rmargin{
+    margin-right: 10px;
+}
+
+
+
+/* TestPage.html classes */
+.logo-mini {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+.questionCount {
+    margin-top: 25px !important;
+}
+.answers {
+    padding: 35px !important;
+}
+.column > .ui.segment {
+    transition: background-color 0.12s ease-in-out;
+}
+.column > .ui.segment:hover {
+    background: #eee;
+    cursor: pointer;
+}
+.row.two.column > .option:first-child {
+    margin: 0 15px 0 20px;
+    float: left;
+}
+.row.two.column > .option:last-child {
+    margin: 0 20px 0 15px;
+    float: right;
+}
+.option {
+    padding: 20px;
+    max-width: 44%;
+    height: 100px;
+    margin: 0 auto;
+}
+.answer {
+
+}
+.column > .ui.segment.incorrect {
+    background-color: rgba(220, 40, 40, 0.8) !important;
+}
+.column > .ui.segment.correct {
+    background-color: rgba(40, 220, 40, 0.8) !important;
+}
+.row > #text-answer {
+    width: inherit;
+}
