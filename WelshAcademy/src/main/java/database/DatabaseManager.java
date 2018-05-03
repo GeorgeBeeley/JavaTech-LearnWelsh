@@ -467,6 +467,31 @@ public class DatabaseManager {
         return row;
     }
     /**
+     * gets row from table
+     * @param table to get row from
+     * @param rowNum the number of the row
+     * @return string array of table row
+     * @throws java.sql.SQLException
+     */
+    public String[] getRow(String table, int rowNum) throws SQLException{
+        String[] row = null;
+        
+        String cmd = "SELECT * FROM " + table;
+        PreparedStatement st = conn.prepareStatement(cmd);
+        ResultSet rs = st.executeQuery();
+        
+        rs.absolute(rowNum);
+        ResultSetMetaData rsmd = rs.getMetaData();
+        int cols = rsmd.getColumnCount();
+        
+        row = new String[cols];
+            for(int i = 0; i < cols; i++){
+                row[i] = rs.getString(i+1);
+            }
+        
+        return row;
+    }
+    /**
      * gets the size of a table
      * @param table
      * @return number of rows counted
