@@ -13,7 +13,6 @@ import java.util.LinkedList;
 
 /**
  * manages database requests
- * @version 1
  * @author Jack
  */
 public class DatabaseManager {

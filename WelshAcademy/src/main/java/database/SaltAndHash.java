@@ -8,7 +8,6 @@ import java.util.Random;
 /**
  * salts and hashes passwords
  * @author Jack
- * @version 0.3
  */
 public class SaltAndHash {
     

@@ -9,11 +9,6 @@
 
     <name>WelshAcademy</name>
 
-    <properties>
-        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-    
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -35,6 +30,11 @@
         </dependency>
     </dependencies>
 
+    <properties>
+        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    
     <build>
         <plugins>
             <plugin>
@@ -81,8 +81,59 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>            
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>sql-maven-plugin</artifactId>
+                <version>1.5</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>8.0.9-rc</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <driver>${jdbc.driver}</driver>
+                    <url>${jdbc.url}</url>
+                    <username>${jdbc.username}</username>
+                    <password>${jdbc.password}</password>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>generate-test-resources</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <srcFiles>
+                                <srcFile>src/test/resources/welsh_academy_scores.sql</srcFile>
+                                <srcFile>src/test/resources/welsh_academy_users.sql</srcFile>
+                                <srcFile>src/test/resources/welsh_academy_words.sql</srcFile>
+                            </srcFiles>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>mysql</id>
+            <dependencies>
+                <dependency>
+                    <groupId>mysql</groupId>
+                    <artifactId>mysql-connector-java</artifactId>
+                    <version>8.0.9-rc</version>
+                </dependency>
+            </dependencies>
+            <properties>
+                <jdbc.url>jdbc:mysql://root@localhost:3306/welsh_academy?useSSL=FALSE</jdbc.url>
+                <jdbc.username>george</jdbc.username>
+                <jdbc.password>Geo451105</jdbc.password>
+                <jdbc.driver>com.mysql.cj.jdbc.Driver</jdbc.driver>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>

@@ -6,9 +6,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * handles the logins
+ * handles the logins and registrations 
  * @author Jack
- * @version 1
  */
 public class LoginHandler {
     

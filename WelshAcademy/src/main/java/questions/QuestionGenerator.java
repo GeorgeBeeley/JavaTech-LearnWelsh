@@ -3,7 +3,6 @@ package questions;
 import database.DatabaseManager;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -78,12 +77,11 @@ public final class QuestionGenerator {
             //get database
             DatabaseManager dbm = new DatabaseManager();
             int numWords = dbm.count("Words");
-            Random rand = new Random();
             
             strB.append("{\"Questions\": [");
             //make 20 questions make array of json strings
             for(int i=0;i<20;i++){
-                int r = rand.nextInt(numWords)+1;
+                int r = RAND.nextInt(numWords)+1;
                 String[] aRow = dbm.getRow("Words", r);
                 Translation correctTranslation = new Translation(aRow);
                 
@@ -92,7 +90,7 @@ public final class QuestionGenerator {
                 
                 //get wrong answers
                 for(int j=1;j<=3;j++){
-                    r = rand.nextInt(numWords)+1;
+                    r = RAND.nextInt(numWords)+1;
                     String[] anoutherRow = dbm.getRow("Words", r);
                     Translation t = new Translation(anoutherRow);
                     translationSet[j] = t;

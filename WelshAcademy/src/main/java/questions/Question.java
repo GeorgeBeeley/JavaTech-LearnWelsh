@@ -16,7 +16,14 @@ public class Question implements Serializable{
     private final String question;
     private String givenAnswer;
     
-    
+    /**
+     * create question
+     * @param question
+     * @param rightAnswer
+     * @param wrong1
+     * @param wrong2
+     * @param wrong3 
+     */
     public Question(String question,String rightAnswer,String wrong1,String wrong2,String wrong3){
         this.question = question;
         this.rightAnswer = rightAnswer;
@@ -24,19 +31,31 @@ public class Question implements Serializable{
         this.wrongA2 = wrong2;
         this.wrongA3 = wrong3;
     }
-    
+    /**
+     * 
+     * @param givenAnswer 
+     */
     public void recieveAnswer(String givenAnswer){
         this.givenAnswer = givenAnswer;
     }
-    
+    /**
+     * 
+     * @return the right answer
+     */
     public String getRightAnswer(){
         return rightAnswer;
     }
-    
+    /**
+     * 
+     * @return the question
+     */
     public String getQuestion(){
         return question;
     }
-    
+    /**
+     * 
+     * @return true if correct answer given
+     */
     public boolean checkAnswer(){
         return givenAnswer.equalsIgnoreCase(rightAnswer);
     }
